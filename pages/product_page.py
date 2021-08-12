@@ -4,7 +4,7 @@ from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
     def should_be_product_page(self):
-        # self.should_be_product_url()
+        self.should_be_product_url()
         self.should_be_basket_form()
         self.add_to_basket()
         self.should_be_success()
@@ -20,7 +20,7 @@ class ProductPage(BasePage):
     def add_to_basket(self):
         link = self.browser.find_element(*ProductPageLocators.BUTTON_BASKET)
         link.click()
-        # self.solve_quiz_and_get_code()
+        self.solve_quiz_and_get_code()
 
     def should_be_success(self):
         book = self.browser.find_element(*ProductPageLocators.SUCCESS_FORM)
